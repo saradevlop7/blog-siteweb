@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Article UI</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white font-sans">
+
+<div class="max-w-[420px] mx-auto pb-24">
+
+  <!-- IMAGE HEADER -->
+  <div class="relative">
+    <img src="people.jpg"
+         class="w-full h-[420px] object-cover">
+
+    <!-- top icons -->
+    <div class="absolute top-4 right-4">
+      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-width="2" d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21z"/>
+      </svg>
+    </div>
+
+    <!-- overlay text -->
+    <div class="absolute bottom-4 left-4 right-4 text-white">
+      <h2 class="text-xl font-bold">Journey in Yellow River</h2>
+      <p class="text-sm opacity-90">by Veronica • France</p>
+
+      <div class="flex gap-4 text-xs mt-2">
+        <div class="flex items-center gap-1">
+          ⏱ 15 min to read
+        </div>
+        <div class="flex items-center gap-1">
+          👁 12K
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="p-4 text-gray-800">
+
+    <div class="flex justify-between items-center text-sm mb-3">
+      <span class="font-semibold">Lets begin to read</span>
+      <span class="text-gray-400">End</span>
+    </div>
+
+    <p class="text-sm leading-relaxed mb-4">
+      An iconic symbol of Paris (and all of France), the Eiffel Tower is one of
+      the most recognizable landmarks on earth. Gustave Eiffel designed the
+      1,050-foot tower to commemorate the centennial of the French Revolution.
+    </p>
+
+    <p class="text-sm leading-relaxed mb-4">
+      It was once the world's tallest structure. View the architectural icon
+      from afar, or visit its three observation levels for stellar city views.
+    </p>
+
+    <p class="text-sm leading-relaxed mb-4">
+      📍 Champ de Mars, 5 Ave. Anatole France, Paris, Île-de-France, 75007
+    </p>
+
+    <p class="text-sm leading-relaxed mb-4">
+      Meet your expert guide at our designated meeting point just steps from
+      the Eiffel Tower and start your journey through Paris history.
+    </p>
+
+    <p class="text-sm font-semibold text-emerald-500">
+      Read more about – Eiffel Tower Access with Guide to 2nd Floor
+    </p>
+  </div>
+
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[420px]
+            bg-gray-100 flex justify-around py-3 rounded-t-2xl">
+
+  <div class="flex flex-col items-center text-emerald-500">
+    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M10 2l8 8h-3v8H5v-8H2l8-8z"/>
+    </svg>
+    <span class="text-xs">home</span>
+  </div>
+
+  <div class="flex flex-col items-center text-gray-500">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-width="2" d="M12 11a4 4 0 100-8 4 4 0 000 8z"/>
+      <path stroke-width="2" d="M19 11c0 7-7 11-7 11S5 18 5 11a7 7 0 1114 0z"/>
+    </svg>
+    <span class="text-xs">location</span>
+  </div>
+
+  <div class="flex flex-col items-center text-gray-500">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-width="2"
+        d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21z"/>
+    </svg>
+    <span class="text-xs">wishlist</span>
+  </div>
+
+  <div class="flex flex-col items-center text-gray-500">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-width="2"
+        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/>
+      <path stroke-width="2"
+        d="M6 20v-1a6 6 0 0112 0v1"/>
+    </svg>
+    <span class="text-xs">profile</span>
+  </div>
+
+</div>
+
+</body>
+</html>
