@@ -51,3 +51,28 @@ closeModalBtn.onclick = () => {
     modal.classList.add('hidden');
 };
 
+// 4. L'Enregistrement (FIXED)
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Recuperation des valeurs
+    const newData = {
+        titre: form.querySelector('input[placeholder*="Titre"]').value,
+        destination: form.querySelector('input[placeholder*="Destination"]').value,
+        note: form.querySelector('input[placeholder*="Note"]').value,
+        categorie: form.querySelector('input[placeholder*="Catégorie"]').value,
+        imageUrl: form.querySelector('input[placeholder*="Image"]').value
+    };
+
+    if (editId !== null) {
+        destinations[editId] = newData;
+        editId = null;
+    } else {
+        destinations.push(newData);
+    }
+
+    saveAndRender();
+    modal.classList.add('hidden');
+    form.reset();
+});
+
