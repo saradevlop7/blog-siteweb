@@ -39,3 +39,15 @@ function renderDestinations(filter = 'All') {
         cardsContainer.appendChild(card);
     });
 }
+
+// 3. Gestion du Modal
+openModalBtn.onclick = () => {
+    editId = null;
+    form.reset();
+    modal.classList.remove('hidden');
+};
+
+closeModalBtn.onclick = () => {
+    modal.classList.add('hidden');
+};
+
