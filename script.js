@@ -97,4 +97,21 @@ window.editCard = (index) => {
     modal.classList.remove('hidden');
 };
 
+// 6. Filtrage
+categoryFilters.forEach(btn => {
+    btn.addEventListener('click', () => {
+        categoryFilters.forEach(s => s.classList.remove('bg-emerald-400', 'text-white'));
+        btn.classList.add('bg-emerald-400', 'text-white');
+        renderDestinations(btn.innerText.trim());
+    });
+});
+
+// Helper
+function saveAndRender() {
+    localStorage.setItem('myDestinations', JSON.stringify(destinations));
+    renderDestinations();
+}
+
+// Start
+renderDestinations();
 
