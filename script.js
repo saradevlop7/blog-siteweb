@@ -76,3 +76,25 @@ form.addEventListener('submit', function(e) {
     form.reset();
 });
 
+// 5. Delete & Edit
+window.deleteCard = (index) => {
+    if(confirm("Supprimer ce souvenir ?")) {
+        destinations.splice(index, 1);
+        saveAndRender();
+    }
+};
+
+window.editCard = (index) => {
+    const dest = destinations[index];
+    editId = index;
+    
+    form.querySelector('input[placeholder*="Titre"]').value = dest.titre;
+    form.querySelector('input[placeholder*="Destination"]').value = dest.destination;
+    form.querySelector('input[placeholder*="Note"]').value = dest.note;
+    form.querySelector('input[placeholder*="Catégorie"]').value = dest.categorie;
+    form.querySelector('input[placeholder*="Image"]').value = dest.imageUrl;
+    
+    modal.classList.remove('hidden');
+};
+
+
