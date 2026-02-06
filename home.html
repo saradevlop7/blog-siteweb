@@ -9,32 +9,42 @@
 </head>
 
 <body class="bg-white font-sans">
-  <div id="modal" class="fixed inset-0 bg-black/50 hidden flex items-center justify-center z-50">
+  <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
 
-    <div class="bg-green-600 w-[90%] max-w-md rounded-2xl p-6 text-white relative">
+    <form id="modal-form" class="space-y-3 bg-green-700 p-5 rounded-xl">
+      <input id="inputTitle" type="text" placeholder="Entrez le Titre" class="w-full p-2 rounded text-black" required>
 
-      <h2 class="text-xl font-semibold mb-4">Add Destination</h2>
+      <input id="inputDestination" type="text" placeholder="Entrez la Destination" class="w-full p-2 rounded text-black"
+        required>
 
-      <form id="modal-form" class="space-y-3">
-        <input type="text" placeholder="Entrez le Titre" class="w-full p-2 rounded text-black" required>
-        <input type="text" placeholder="Entrez la Destination" class="w-full p-2 rounded text-black" required>
-        <input type="number" placeholder="Note" class="w-full p-2 rounded text-black" min="1" max="5" required>
-        <input type="text" placeholder="Entrez Catégorie" class="w-full p-2 rounded text-black" required>
-        <input type="url" placeholder="Image URL" class="w-full p-2 rounded text-black" required>
+      <input id="inputNote" type="number" placeholder="Note" class="w-full p-2 rounded text-black" min="1" max="5"
+        required>
 
-        <div class="flex justify-between pt-4">
-          <button type="button" id="closeModal" class="bg-gray-200 text-black px-4 py-2 rounded shadow hover:bg-gray-300">
-            Annuler
-          </button>
+      <select id="inputCategory" class="w-full p-2 rounded text-black">
+        <option value="">Select category</option>
+        <option value="Forests">Forest</option>
+        <option value="Beachs">Beach</option>
+        <option value="Rivers">River</option>
+        <option value="Mountains">Mountain</option>
+        <option value="Deserts">Desert</option>
+      </select>
 
-          <button type="submit" class="bg-green-800 px-4 py-2 rounded shadow hover:bg-green-900">
-            Enregistrer
-          </button>
-        </div>
-      </form>
+      <input id="inputImage" type="url" placeholder="Image URL" class="w-full p-2 rounded text-black" required>
 
-    </div>
+      <div class="flex justify-between pt-4">
+        <button type="button" id="closeModal" class="bg-gray-200 text-black px-4 py-2 rounded">
+          Annuler
+        </button>
+
+        <button type="submit" class="bg-emerald-500 text-white px-4 py-2 rounded">
+          Ajouter
+        </button>
+      </div>
+    </form>
+
   </div>
+
+
 
   <div class="max-w-[420px] lg:max-w-6xl mx-auto p-4 pb-24">
 
@@ -44,16 +54,17 @@
       </svg>
 
       <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
       </svg>
     </div>
 
     <h2 class="font-bold mb-2">Blogger of week</h2>
     <div class="flex gap-3 overflow-x-auto lg:overflow-visible mb-4">
-      <img class="w-12 h-12 rounded-full border-4 border-emerald-400" src="low-angle-woman-taking-photos.jpg" alt="">
-      <img class="w-12 h-12 rounded-full" src="girl-with-backpack-leaning-against-tree.jpg" alt="">
-      <img class="w-12 h-12 rounded-full" src="young-woman-traveling-by-herself.jpg" alt="">
-      <img class="w-12 h-12 rounded-full" src="a1.jpg" alt="">
+      <img class="w-12 h-12 rounded-full border-4 border-emerald-400" src="images/low-angle-woman-taking-photos.jpg" alt="">
+      <img class="w-12 h-12 rounded-full" src="images/girl-with-backpack-leaning-against-tree.jpg" alt="">
+      <img class="w-12 h-12 rounded-full" src="images/young-woman-traveling-by-herself.jpg" alt="">
+      <img class="w-12 h-12 rounded-full" src="images/a1.jpg" alt="">
     </div>
 
     <h2 class="font-bold mb-2">What Do you Want To Read?</h2>
@@ -64,16 +75,26 @@
       <span class="px-4 py-1 rounded-full border text-sm cursor-pointer hover:bg-gray-50">River</span>
     </div>
 
-    <button id="openModal" class="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg shadow hover:bg-green-700 transition mb-6">
+    <button id="openModal"
+      class="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg shadow hover:bg-green-700 transition mb-6">
       <span class="text-xl">+</span>
       Create
     </button>
 
-    <div id="cardsContainer" class="lg:flex lg:flex-wrap lg:gap-6">
+
+
+    <!-- Main Card -->
+    <div class="flex gap-4  rounded-2xl overflow-hidden mb-4">
+      <div id="cardsContainer" class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       </div>
+
+    </div>
+
+
   </div>
 
-  <div class="fixed lg:static bottom-0 left-1/2 -translate-x-1/2 lg:translate-x-0 w-full max-w-[420px] lg:max-w-6xl bg-gray-100 flex justify-around py-3 rounded-t-2xl mx-auto border-t lg:border-none">
+  <div
+    class="fixed lg:static bottom-0 left-1/2 -translate-x-1/2 lg:translate-x-0 w-full max-w-[420px] lg:max-w-6xl bg-gray-100 flex justify-around py-3 rounded-t-2xl mx-auto border-t lg:border-none">
     <div class="flex flex-col items-center text-emerald-400">
       <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
         <path d="M10 2l8 8h-3v8H5v-8H2l8-8z" />
@@ -89,7 +110,8 @@
     </div>
     <div class="flex flex-col items-center text-gray-500">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-width="2" d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21z" />
+        <path stroke-width="2"
+          d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21z" />
       </svg>
       <span class="text-xs">Wishlist</span>
     </div>
